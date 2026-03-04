@@ -1,530 +1,447 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impulsa tu Carrera | Jorge Leiva - Asesor UTEL</title>
+    <meta name="description" content="Obtén tu título universitario con flexibilidad y validez oficial. Descubre cómo acceder a una beca parcial en UTEL con la asesoría de Jorge Leiva.">
     
-    <title>Profesional UTEL | Asesor Jorge Leyva</title>
-    <meta name="description" content="Descubre el Método JL, el sistema de ventas con IA creado por Jorge Leyva (@SoyJorgeLeyva) para conseguir de 1 a 5 clientes diarios para tu negocio. ¡Empieza tu transformación hoy!">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    
+    <!-- Iconos -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Jorge Leyva",
-      "url": "https://[tu-sitio-web].com/",
-      "sameAs": [
-        "https://twitter.com/SoyJorgeLeyva",
-        "https://www.linkedin.com/in/SoyJorgeLeyva",
-        "https://www.instagram.com/SoyJorgeLeyva"
-      ],
-      "jobTitle": "Creador del Método JL",
-      "description": "Jorge Leyva es un experto en sistemas de ventas con IA y el creador del Método JL, un sistema diseñado para ayudar a coaches, consultores y proveedores de servicios a escalar sus negocios.",
-      "image": "https://[tu-sitio-web].com/jorge-leyva-profesional.jpg"
-    }
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',    
+                            light: '#1e293b',   
+                            primary: '#2563eb', 
+                            accent: '#f59e0b',  
+                        }
+                    }
+                }
+            }
+        }
     </script>
 
     <style>
-        /* Estilos Generales y de Reset */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #000000; color: #ffffff; overflow-x: hidden; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
 
-        /* Estructura de Secciones */
-        .section { padding: 100px 0; position: relative; overflow: hidden; }
-        .section-dark { background: linear-gradient(145deg, #000000 0%, #1a1a1a 100%); color: #ffffff; }
-        .section-light { background: #ffffff; color: #1a1a1a; }
-        .section-title { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 2rem; text-align: center; line-height: 1.2; position: relative; }
-        .section-light .section-title { color: #000000; }
-        .section-dark .section-title { color: #ffffff; }
-        .section-title::after { content: ''; position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: linear-gradient(90deg, #FFD700, #FFA500); border-radius: 2px; }
-        .section-subtitle { text-align: center; font-size: clamp(1rem, 2vw, 1.2rem); max-width: 800px; margin: 0 auto 60px auto; color: #cccccc; line-height: 1.6; }
-        .section-light .section-subtitle { color: #555555; }
+        /* --- Animaciones del Botón --- */
+        .btn-dynamic {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
+            transition: all 0.3s ease;
+            animation: pulse-glow 2s infinite;
+        }
+        .btn-dynamic:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.8);
+        }
 
-        /* --- 1. SECCIÓN HERO (PROMESA) --- */
-        .hero-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
-        .hero-content { z-index: 2; position: relative; animation: fadeInUp 1s ease-out; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .main-headline { font-size: clamp(2.2rem, 4.5vw, 3.8rem); font-weight: 900; background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: gradientShift 4s ease-in-out infinite; margin-bottom: 1rem; line-height: 1.2; }
-        @keyframes gradientShift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
-        .sub-headline { font-size: clamp(1.5rem, 3vw, 2rem); color: #ffffff; margin-bottom: 1.5rem; font-weight: 500; min-height: 60px; }
-        .creator-tagline { font-size: 1.2rem; color: #FFD700; font-weight: 600; margin-bottom: 2rem; }
-        .hero-promise { font-size: clamp(1rem, 1.5vw, 1.1rem); color: #cccccc; max-width: 800px; margin: 0 auto 2.5rem auto; line-height: 1.7; }
-        .video-container { position: relative; overflow: hidden; width: 100%; max-width: 854px; margin: 30px auto; border: 3px solid #FFD700; border-radius: 15px; box-shadow: 0 0 30px rgba(255, 215, 0, 0.4); background-color: #000; }
-        .video-container::before { content: ''; display: block; padding-top: 56.25%; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .cta-button { display: inline-block; padding: 20px 45px; background: linear-gradient(45deg, #FFD700, #FFA500); color: #000000; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3); margin: 10px; border: none; cursor: pointer; }
-        .cta-button::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent); transition: left 0.6s; }
-        .cta-button:hover::before { left: 100%; }
-        .cta-button:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(255, 215, 0, 0.5); }
-        .infinite-bounce { animation: infinite-bounce 2.5s ease-in-out infinite; }
-        @keyframes infinite-bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-15px); } 60% { transform: translateY(-7px); } }
-        .typewriter-cursor { display: inline-block; background-color: #FFD700; margin-left: 4px; width: 4px; animation: blink-caret 0.75s step-end infinite; }
-        @keyframes blink-caret { from, to { background-color: transparent; } 50% { background-color: #FFD700; } }
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(245, 158, 11, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+        }
 
-        /* --- 2. SECCIÓN DOLOR / TRANSFORMACIÓN --- */
-        .avatars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: start; }
-        .avatar-card { background: #1f1f1f; border-radius: 20px; padding: 30px; border: 1px solid #333; transition: all 0.3s ease; }
-        .avatar-card:hover { transform: translateY(-10px); border-color: #FFD700; }
-        .avatar-title { text-align: center; font-size: 1.8rem; font-weight: 700; color: #FFD700; margin-bottom: 10px; }
-        .avatar-subtitle { text-align: center; font-size: 1rem; color: #ccc; margin-bottom: 30px; }
-        .avatar-list-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 15px; padding-bottom: 5px; }
-        .fears-title { color: #ff6b6b; border-bottom: 2px solid #ff6b6b; }
-        .dreams-title { color: #51cf66; border-bottom: 2px solid #51cf66; }
-        .avatar-list { list-style: none; padding: 0; margin-bottom: 30px; }
-        .avatar-list li { margin-bottom: 12px; display: flex; align-items: flex-start; font-size: 0.95rem; line-height: 1.5; }
-        .avatar-list li::before { flex-shrink: 0; margin-right: 10px; font-size: 1.2rem; line-height: 1.2; }
-        .fears-list li::before { content: '❌'; }
-        .dreams-list li::before { content: '✅'; }
+        /* --- Texto Dinámico --- */
+        .dynamic-text-wrapper {
+            display: inline-block;
+            min-width: 250px;
+            text-align: left;
+            border-bottom: 3px solid #f59e0b;
+        }
 
-        /* --- NUEVA SECCIÓN: SOBRE EL CREADOR --- */
-        .creator-section { display: grid; grid-template-columns: 1fr 1.5fr; align-items: center; gap: 60px; max-width: 1000px; margin: 0 auto; }
-        .creator-photo-wrapper { text-align: center; }
-        .creator-photo { max-width: 300px; width: 100%; border-radius: 50%; border: 5px solid #FFD700; box-shadow: 0 0 30px rgba(255, 215, 0, 0.5); }
-        .creator-bio h2 { font-size: 2.5rem; font-weight: 800; color: #111; margin-bottom: 20px; }
-        .creator-bio .handle { color: #FFA500; display: block; font-size: 1.3rem; font-weight: 600; margin-bottom: 20px; }
-        .creator-bio p { font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 25px; }
-        .social-links a { display: inline-block; margin: 0 10px; text-decoration: none; font-size: 1.8rem; color: #333; transition: color 0.3s, transform 0.3s; }
-        .social-links a:hover { color: #FFA500; transform: scale(1.1); }
+        /* --- Notificaciones Flotantes (Actualizado: Derecha, Blanco) --- */
+        #liveNotifications {
+            position: fixed;
+            bottom: 24px;
+            right: 24px; /* Cambiado al lado derecho */
+            left: auto;
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            pointer-events: none; /* Para no bloquear clics */
+        }
 
-        /* --- 3, 4, 6. SECCIONES DE BENEFICIOS, ENTREGABLES Y BONUS --- */
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .card { background: #ffffff; border-radius: 20px; padding: 35px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; border-top: 5px solid #FFD700; text-align: center; }
-        .section-dark .card { background: #1f1f1f; box-shadow: 0 15px 35px rgba(0,0,0,0.2); border-top-color: #FFA500; }
-        .card:hover { transform: translateY(-15px); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2); }
-        .section-dark .card:hover { box-shadow: 0 25px 50px rgba(0,0,0,0.4); }
-        .card-icon { font-size: 3.5rem; margin-bottom: 20px; color: #FFD700; line-height: 1; }
-        .card-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 15px; }
-        .section-light .card-title { color: #111; }
-        .section-dark .card-title { color: #FFD700; }
-        .card-description { font-size: 1rem; line-height: 1.6; }
-        .section-light .card-description { color: #555; }
-        .section-dark .card-description { color: #ccc; }
+        .notification {
+            background: #ffffff; /* Fondo Blanco */
+            border-left: 5px solid #f59e0b;
+            padding: 14px 20px;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 0.9rem;
+            transform: translateX(120%);
+            animation: slideInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            pointer-events: auto;
+        }
 
-        /* --- 5. SECCIÓN PRECIO Y GARANTÍA --- */
-        .pricing-box { background: linear-gradient(135deg, #1e1e1e, #111111); border: 2px solid #FFD700; border-radius: 25px; padding: 40px; max-width: 700px; margin: 0 auto 60px auto; text-align: center; box-shadow: 0 10px 40px rgba(255, 215, 0, 0.2); }
-        .price-original { font-size: 1.5rem; text-decoration: line-through; color: #888; margin-bottom: 5px; }
-        .price-current { font-size: 4.5rem; font-weight: 900; color: #FFD700; margin-bottom: 10px; }
-        .price-tagline { font-size: 1.2rem; color: #fff; margin-bottom: 30px; }
-        .guarantee-box { display: flex; align-items: center; justify-content: center; gap: 25px; max-width: 800px; margin: 0 auto; background: #f8f9fa; padding: 30px; border-radius: 20px; border: 1px solid #ddd; }
-        .guarantee-icon { font-size: 5rem; color: #FFD700; }
-        .guarantee-text h3 { font-size: 1.8rem; color: #111; margin-bottom: 10px; }
-        .guarantee-text p { font-size: 1rem; line-height: 1.6; color: #555; }
+        .notification.fade-out {
+            animation: slideOutRight 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes slideInRight {
+            to { transform: translateX(0); }
+        }
+        @keyframes slideOutRight {
+            to { transform: translateX(120%); opacity: 0; }
+        }
+
+        /* --- Contenedor del Video (Hero) --- */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
         
-        /* --- 7. SECCIÓN Q&A (Preguntas Frecuentes) --- */
-        .qa-container { max-width: 800px; margin: 0 auto; }
-        .qa-item { background: #f8f9fa; margin-bottom: 15px; border-radius: 10px; border-left: 5px solid #FFD700; }
-        .qa-question { padding: 20px; font-weight: 700; font-size: 1.2rem; cursor: pointer; position: relative; color: #111; }
-        .qa-question::after { content: '+'; position: absolute; right: 20px; font-size: 1.5rem; transition: transform 0.3s ease; }
-        .qa-item.active .qa-question::after { transform: rotate(45deg); }
-        .qa-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s ease, padding 0.5s ease; color: #555; line-height: 1.7; }
-        .qa-item.active .qa-answer { padding: 0 20px 20px 20px; }
-
-        /* --- 8. SECCIÓN ESCASEZ (Final CTA) --- */
-        .scarcity-box { text-align: center; max-width: 800px; margin: 0 auto; }
-        .scarcity-box p { font-size: 1.3rem; margin-bottom: 30px; line-height: 1.6; }
-        
-        /* --- NOTIFICACIONES --- */
-        .live-notifications { position: fixed; bottom: 20px; right: 20px; z-index: 1000; pointer-events: none; }
-        .notification { display: flex; align-items: center; background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(10px); color: #e0e0e0; padding: 15px 20px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 215, 0, 0.2); margin-bottom: 15px; width: 340px; max-width: 90vw; font-size: 14px; animation: slideInFromBottom 0.5s ease-out forwards; }
-        .notification.fade-out { animation: fadeOutToBottom 0.5s ease-in forwards; }
-        @keyframes slideInFromBottom { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        @keyframes fadeOutToBottom { to { transform: translateY(100%); opacity: 0; } }
-        .notification-icon { font-size: 20px; margin-right: 12px; line-height: 1; }
-        .notification-content .notification-name { font-weight: 700; color: #FFD700; }
-        
-        /* --- FOOTER --- */
-        .site-footer { background: #0a0a0a; padding: 60px 0; text-align: center; border-top: 1px solid #333; }
-        .footer-brand h3 { color: #fff; font-size: 2rem; margin-bottom: 5px; font-weight: 800; }
-        .footer-brand p { color: #FFD700; font-size: 1.2rem; letter-spacing: 1px; margin-bottom: 30px; }
-        .footer-socials { margin-bottom: 30px; }
-        .footer-socials a { color: #ccc; margin: 0 15px; font-size: 1.5rem; text-decoration: none; transition: color 0.3s; }
-        .footer-socials a:hover { color: #FFD700; }
-        .footer-copyright { color: #888; font-size: 14px; line-height: 1.7; }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
-            .section { padding: 60px 0; }
-            .cta-button { display: block; width: 90%; margin: 15px auto; }
-            .card-grid, .avatars-grid { grid-template-columns: 1fr; }
-            .guarantee-box { flex-direction: column; text-align: center; }
-            .creator-section { grid-template-columns: 1fr; gap: 30px; text-align: center; }
-            .creator-bio h2 { text-align: center; }
-            .social-links { text-align: center; margin-top: 20px; }
-            .live-notifications { bottom: 10px; right: 10px; left: 10px; }
-            .notification { width: auto; max-width: 100%; }
+        /* Highlight para texto */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #60a5fa, #3b82f6);
         }
     </style>
 </head>
-<body>
+<body class="antialiased selection:bg-brand-primary selection:text-white">
 
-    <section class="section section-dark hero-section" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="main-headline">Organiza tu Mundo Digital y Vende en Piloto Automático</h1>
-                <p class="creator-tagline">El Método JL por Jorge Leyva</p>
-                <p class="sub-headline">
-                    <span id="typewriter-text"></span><span class="typewriter-cursor"></span>
-                </p>
-                <p class="hero-promise">
-                    Únete al único programa que te enseña a crear un sistema de ventas con IA para conseguir de 1 a 5 clientes diarios para tu negocio en menos de 30 días.
-                </p>
-                
-                <div class="video-container">
-                    <iframe 
-                        src="https://drive.google.com/file/d/1OAAQx0UGNwpFfF7lufOvtT9AM9hSgPmg/preview" 
-                        allow="autoplay;"
-                        sandbox="allow-scripts allow-same-origin allow-presentation"
-                        oncontextmenu="return false;">
-                    </iframe>
-                </div>
+    <!-- ETIQUETA DE AUDIO (Ruta en carpeta) -->
+    <!-- Nota: Asegúrate de tener el archivo notification.mp3 en esa ruta en tu servidor -->
+    <audio id="notificationSound" src="assets/sounds/notification.mp3" preload="auto"></audio>
 
-                <div style="margin-top: 40px;">
-                    <a href="https://pay.hotmart.com/R100049489D?checkoutMode=10&bid=1751026977242" target="_blank" class="cta-button infinite-bounce">🚀CONSULTAR EVALUACIÓN DE BECA PARCIAL</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- ==========================================
+         SECCIÓN 1: ATENCIÓN (HERO)
+         ========================================== -->
+    <header class="relative pt-16 pb-12 lg:pt-24 lg:pb-20 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center mix-blend-overlay"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/80 to-brand-dark z-0"></div>
 
-    <section class="section section-dark" id="para-ti">
-        <div class="container">
-            <h2 class="section-title">¿Te identificas con esto?</h2>
-            <p class="section-subtitle">El Método JL fue creado pensando en los desafíos reales de emprendedores como tú. Descubre si eres uno de ellos.</p>
-            <div class="avatars-grid">
-                <div class="avatar-card">
-                    <h3 class="avatar-title">CASO 1</h3>
-                    <p class="avatar-subtitle">Eres Emprendedora Pura Sangre</p>
-                    <h4 class="avatar-list-title fears-title">¿Sientes esto cada día?</h4>
-                    <ul class="avatar-list fears-list">
-                        <li>Fracasar con tu emprendimiento.</li>
-                        <li>No conseguir suficientes clientes.</li>
-                        <li>No poder diferenciarte de la competencia.</li>                        
-                    </ul>
-                    <h4 class="avatar-list-title dreams-title">Tu Transformación Deseada</h4>
-                    <ul class="avatar-list dreams-list">
-                        <li>Alcanzar total independencia económica y laboral.</li>
-                        <li>Sentir una confianza plena en tus habilidades y decisiones.</li>
-                        <li>Diseñar un estilo de vida libre, sin jefes ni horarios fijos.</li>
-                    </ul>
-                </div>
-                <div class="avatar-card">
-                    <h3 class="avatar-title">Jorge</h3>
-                    <p class="avatar-subtitle">El Profesional en Transición</p>
-                    <h4 class="avatar-list-title fears-title">Tus Miedos Principales</h4>
-                    <ul class="avatar-list fears-list">
-                        <li>Arriesgar tu patrimonio personal en el intento.</li>
-                        <li>Que una crisis económica destruya tu proyecto.</li>
-                        <li>No recuperar la inversión de tiempo y dinero.</li>
-                    </ul>
-                    <h4 class="avatar-list-title dreams-title">Tu Transformación Deseada</h4>
-                    <ul class="avatar-list dreams-list">
-                        <li>Convertirte en un referente respetado en tu nueva industria.</li>
-                        <li>Lograr ingresos altos sin sacrificar tu calidad de vida.</li>
-                        <li>Tener libertad de horarios para viajar y disfrutar más.</li>
-                    </ul>
-                </div>
-                <div class="avatar-card">
-                    <h3 class="avatar-title">Tony</h3>
-                    <p class="avatar-subtitle">El Dueño de Negocio Tradicional</p>
-                    <h4 class="avatar-list-title fears-title">Tus Miedos Principales</h4>
-                    <ul class="avatar-list fears-list">
-                        <li>Invertir tu dinero en un curso que no sirva para nada.</li>
-                        <li>Que la tecnología sea demasiado compleja y no entenderla.</li>
-                        <li>Quedarte obsoleto frente a tu competencia digital.</li>
-                    </ul>
-                    <h4 class="avatar-list-title dreams-title">Tu Transformación Deseada</h4>
-                    <ul class="avatar-list dreams-list">
-                        <li>Ser visto como un empresario moderno, un "triunfador digital".</li>
-                        <li>Aumentar tus ventas de forma simple y directa.</li>
-                        <li>Modernizar tu negocio para asegurar su futuro y legado.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+        <div class="container mx-auto px-4 relative z-10 max-w-5xl text-center">
+            
+            <p class="text-brand-accent font-semibold tracking-wide uppercase text-sm mb-4">
+                Universidades UTEL + Asesoría Estratégica
+            </p>
 
-    <section class="section section-light" id="creador">
-        <div class="container">
-            <h2 class="section-title">Conoce al Creador</h2>
-            <div class="creator-section">
-                <div class="creator-photo-wrapper">
-                    <img src="https://[tu-sitio-web].com/jorge-leyva-profesional.jpg" alt="Foto profesional de Jorge Leyva" class="creator-photo">
-                </div>
-                <div class="creator-bio">
-                    <h2>Hola, soy Jorge Leyva</h2>
-                    <span class="handle">@SoyJorgeLeyva</span>
-                    <p>Tras años de prueba y error, noches sin dormir y miles de dólares invertidos en estrategias que no funcionaban, descubrí que el éxito no dependía de trabajar más, sino de tener un sistema inteligente.</p>
-                    <p>Por eso creé el <strong>Método JL</strong>. No es solo otro curso; es la hoja de ruta exacta que construí para mí mismo, un sistema que fusiona la estrategia de ventas con el poder de la inteligencia artificial para que tú no tengas que pasar por el mismo camino de frustración que yo.</p>
-                    <div class="social-links">
-                        <a href="https://twitter.com/SoyJorgeLeyva" target="_blank" title="Twitter de Jorge Leyva">T</a>
-                        <a href="https://www.instagram.com/SoyJorgeLeyva" target="_blank" title="Instagram de Jorge Leyva">I</a>
-                        <a href="https://www.linkedin.com/in/SoyJorgeLeyva" target="_blank" title="LinkedIn de Jorge Leyva">L</a>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-black leading-tight mb-6">
+                Obtén tu Título Universitario sin Pausar tu Vida: <br class="hidden md:block"/>
+                Estudia <span class="text-brand-accent dynamic-text-wrapper" id="dynamicText">a tu propio ritmo</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Soy <strong>Jorge Leiva</strong>, Asesor Educativo. Te guío paso a paso para elegir el programa ideal, organizar tus tiempos y asegurar una <span class="text-white font-bold border-b-2 border-brand-primary">Beca Parcial Exclusiva</span> para que el dinero no sea un obstáculo.
+            </p>
+
+            <!-- Video VSL Trigger -->
+            <div class="max-w-3xl mx-auto mb-10">
+                <div onclick="openVideoModal()" class="video-container bg-brand-light flex items-center justify-center group cursor-pointer hover:shadow-[0_0_30px_rgba(37,99,235,0.3)] transition-all duration-300">
+                    <!-- Placeholder visual -->
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Video de Jorge Leiva" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-300">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center">
+                        <div class="w-20 h-20 md:w-24 md:h-24 bg-brand-primary rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(37,99,235,0.7)] group-hover:scale-110 group-hover:bg-brand-accent transition-all duration-300">
+                            <i data-lucide="play" class="w-10 h-10 md:w-12 md:h-12 text-white ml-1"></i>
+                        </div>
+                        <p class="mt-5 font-bold text-white bg-black/60 backdrop-blur-sm px-6 py-2 rounded-full text-sm tracking-wide border border-white/10">Haz clic para ver cómo funciona el proceso</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="section section-dark" id="beneficios">
-        <div class="container">
-            <h2 class="section-title">¿Qué Lograrás con el Método JL?</h2>
-            <p class="section-subtitle">Transformarás tu negocio con una estrategia clara, una oferta irresistible y un sistema que trabaja para ti 24/7, atrayendo clientes cualificados en piloto automático.</p>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-icon">🗺️</div>
-                    <h3 class="card-title">Claridad y Hoja de Ruta</h3>
-                    <p class="card-description">Sabrás exactamente qué pasos seguir para alcanzar tus metas de facturación sin sentirte abrumado.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">💎</div>
-                    <h3 class="card-title">Oferta Irresistible</h3>
-                    <p class="card-description">Crearás una propuesta de valor tan potente que tus clientes ideales no podrán decir que no.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🎯</div>
-                    <h3 class="card-title">Clientes Cualificados</h3>
-                    <p class="card-description">Atraerás personas realmente interesadas en tu servicio, listas para comprar y fáciles de convertir.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🤖</div>
-                    <h3 class="card-title">Dominio de la IA</h3>
-                    <p class="card-description">Usarás la inteligencia artificial como tu mejor aliado para crear contenido, vender y optimizar procesos.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">⚙️</div>
-                    <h3 class="card-title">Sistema Automático</h3>
-                    <p class="card-description">Implementarás un embudo de ventas que te genere prospectos y clientes de forma predecible y constante.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">📈</div>
-                    <h3 class="card-title">Escala tu Facturación</h3>
-                    <p class="card-description">Tendrás las herramientas y la estrategia para llevar tus ingresos al siguiente nivel de forma sostenible.</p>
-                </div>
-            </div>
+            <!-- CTA Inicial -->
+            <a href="#aplicar" class="btn-dynamic inline-flex items-center justify-center px-8 py-4 text-white font-bold rounded-full text-lg md:text-xl w-full md:w-auto shadow-xl">
+                <span>Aplicar a una Beca Parcial Ahora</span>
+                <i data-lucide="arrow-right" class="ml-2 w-6 h-6"></i>
+            </a>
+            <p class="text-sm text-gray-400 mt-4 flex items-center justify-center gap-2">
+                <i data-lucide="shield-check" class="w-5 h-5 text-green-400"></i>
+                Estudios con Validez Oficial (RVOE)
+            </p>
         </div>
-    </section>
+    </header>
 
-    <section class="section section-light" id="entregables">
-        <div class="container">
-            <h2 class="section-title">Los Pilares del Método JL</h2>
-            <p class="section-subtitle">Esta es la guía completa, paso a paso, diseñada para llevarte de cero a tener un sistema de ventas funcionando y generando resultados tangibles.</p>
-            <div class="card-grid">
-                <div class="card">
-                    <h3 class="card-title">Módulo 1: Mentalidad y Enfoque</h3>
-                    <p class="card-description">Establece las bases mentales para el éxito y define un enfoque láser en tus objetivos.</p>
+    <!-- ==========================================
+         SECCIÓN 2: FRAMEWORK PAS (Problema - Agitación - Solución)
+         ========================================== -->
+    <section class="py-16 bg-brand-light/50 border-y border-white/5 relative z-10">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Problema -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-red-500/20 hover:border-red-500/50 transition-colors">
+                    <div class="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="clock-4" class="text-red-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">El Problema: Falta de Tiempo</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Trabajas todo el día, tienes responsabilidades familiares y parece imposible adaptar tu vida a los horarios rígidos de una universidad tradicional.
+                    </p>
                 </div>
-                <div class="card">
-                    <h3 class="card-title">Módulo 2: Cliente Ideal y Oferta</h3>
-                    <p class="card-description">Define a quién le vendes y crea una oferta irresistible que resuene con sus necesidades.</p>
+
+                <!-- Agitación -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-orange-500/20 hover:border-orange-500/50 transition-colors">
+                    <div class="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="trending-down" class="text-orange-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">La Frustración: Estancamiento</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Pasan los años y ves cómo otros ascienden. Sabes que tienes la capacidad, pero la falta del título frena tu crecimiento económico y profesional.
+                    </p>
                 </div>
-                <div class="card">
-                    <h3 class="card-title">Módulo 3: Tu Sistema con IA</h3>
-                    <p class="card-description">Construye tu máquina de ventas automática utilizando herramientas de inteligencia artificial.</p>
-                </div>
-                <div class="card">
-                    <h3 class="card-title">Módulo 4: Contenido que Vende</h3>
-                    <p class="card-description">Aprende a crear contenido magnético que atrae, educa y convierte a tu audiencia.</p>
-                </div>
-                <div class="card">
-                    <h3 class="card-title">Módulo 5: Cierre por Chat</h3>
-                    <p class="card-description">Domina el arte de cerrar ventas de alto valor a través de conversaciones por chat.</p>
-                </div>
-                <div class="card">
-                    <h3 class="card-title">Módulo 6: Optimización y Escala</h3>
-                    <p class="card-description">Mide tus resultados, optimiza tu sistema y prepárate para escalar tu negocio.</p>
+
+                <!-- Solución -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-green-500/20 hover:border-green-500/50 transition-colors relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-green-500/10 rounded-full blur-2xl"></div>
+                    <div class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center mb-6 relative z-10">
+                        <i data-lucide="check-circle" class="text-green-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 relative z-10">La Solución: Flexibilidad</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed relative z-10">
+                        El modelo online de UTEL te permite estudiar a tu ritmo. Con mi asesoría personal, planificamos tu éxito y obtenemos tu beca para que no pagues de más.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section section-dark" id="precio">
-        <div class="container">
-            <h2 class="section-title">Tu Inversión para Transformar tu Negocio</h2>
-            <div class="pricing-box">
-                <p class="price-original">Valor Real: $997 USD</p>
-                <p class="price-current">$37 USD</p>
-                <p class="price-tagline">Accede ahora con un único pago</p>
-                <a href="https://pay.hotmart.com/R100049489D?checkoutMode=10&bid=1751026977242" target="_blank" class="cta-button infinite-bounce" style="font-size: 1.4rem;">🔥 SÍ, QUIERO INGRESAR AHORA</a>
-            </div>
-            <div class="guarantee-box">
-                <div class="guarantee-icon">🛡️</div>
-                <div class="guarantee-text">
-                    <h3>Garantía de Satisfacción de 7 Días</h3>
-                    <p>Tu inversión está 100% segura. Si aplicas el <strong>Método JL</strong> durante 7 días y demuestras que no has obtenido ningún resultado, te devuelvo el 100% de tu dinero. Sin preguntas, sin riesgo.</p>
+    <!-- ==========================================
+         SECCIÓN 3: AUTORIDAD Y MARCA PERSONAL
+         ========================================== -->
+    <section class="py-20 relative z-10">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-2/5 relative">
+                    <div class="aspect-square rounded-2xl overflow-hidden border-4 border-brand-light shadow-2xl relative z-10">
+                        <img src="https://69a7c51162aea864baccf343.imgix.net/me02.jpg?w=1024&h=1024" alt="Jorge Leyva Asesor Educativo" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-full h-full bg-brand-primary rounded-2xl -z-10"></div>
+                </div>
+                
+                <div class="w-full md:w-3/5">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">
+                        No estás solo en este camino. <span class="text-gradient">Yo ya pasé por ahí.</span>
+                    </h2>
+                    <p class="text-gray-300 mb-6 text-lg">
+                        Hola, soy <strong>Jorge Leyva</strong>. Entiendo perfectamente la fricción que genera volver a estudiar cuando ya tienes una vida armada. Mi objetivo como Asesor Educativo no es venderte un curso, es trazar tu ruta académica.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="user-check" class="text-brand-primary w-6 h-6 flex-shrink-0"></i>
+                            <span class="text-gray-200">Acompañamiento humano real: de persona a persona.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="award" class="text-brand-primary w-6 h-6 flex-shrink-0"></i>
+                            <span class="text-gray-200">Gestión de <strong>Becas Parciales</strong> para viabilidad financiera.</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section section-light" id="bonus">
-        <div class="container">
-            <h2 class="section-title">Y Además, Recibe Bonos de Acción Rápida (Valorados en $497)</h2>
-            <p class="section-subtitle">Estos regalos exclusivos están diseñados para acelerar tus resultados. Disponibles solo por tiempo limitado.</p>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-icon">🎁</div>
-                    <h3 class="card-title">BONO #1: Pack de 100 Prompts de Ventas</h3>
-                    <p class="card-description">Copia y pega estas instrucciones para que la IA cree por ti copys, anuncios y guiones de venta ultra persuasivos.</p>
+    <!-- ==========================================
+         SECCIÓN 5: ACCIÓN (La Oferta Irresistible)
+         ========================================== -->
+    <section id="aplicar" class="py-24 relative overflow-hidden z-10">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-full bg-brand-primary/20 blur-[100px] rounded-full z-0 pointer-events-none"></div>
+
+        <div class="container mx-auto px-4 relative z-10 max-w-3xl text-center">
+            <h2 class="text-4xl md:text-5xl font-heading font-black mb-6">
+                Tu futuro no tiene por qué esperar más.
+            </h2>
+            <p class="text-xl text-gray-300 mb-10 leading-relaxed">
+                Dar el primer paso es <strong>totalmente gratis y sin compromiso</strong>. Hablemos, evaluemos tu perfil y veamos a qué porcentaje de Beca Parcial puedes acceder hoy mismo.
+            </p>
+
+            <div class="bg-brand-light p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl relative">
+                <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-brand-accent text-white px-6 py-1 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg">
+                    Cupos Limitados de Beca
                 </div>
-                <div class="card">
-                    <div class="card-icon">🎁</div>
-                    <h3 class="card-title">BONO #2: Plantilla de Sistema en Notion</h3>
-                    <p class="card-description">Organiza todo tu sistema de ventas, clientes y contenido en una plantilla profesional lista para usar.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🎁</div>
-                    <h3 class="card-title">BONO #3: Sesiones de Q&A en Vivo</h3>
-                    <p class="card-description">Participa en sesiones grupales en vivo para resolver tus dudas directamente conmigo y el equipo.</p>
-                </div>
-                 <div class="card">
-                    <div class="card-icon">🎁</div>
-                    <h3 class="card-title">BONO #4: Acceso a Comunidad Privada</h3>
-                    <p class="card-description">Conecta con otros emprendedores, haz networking y recibe apoyo en nuestro grupo exclusivo.</p>
-                </div>
+                
+                <h3 class="text-2xl font-bold mb-6">Solicita tu Evaluación de Beca</h3>
+                
+                <a href="#" onclick="alert('Aquí iría tu WhatsApp')" class="btn-dynamic block w-full py-5 rounded-xl text-xl font-bold text-white mb-4">
+                    👉 Consultar mi Porcentaje de Beca
+                </a>
             </div>
         </div>
     </section>
 
-    <section class="section section-dark" id="qa">
-        <div class="container">
-            <h2 class="section-title">Preguntas Frecuentes</h2>
-            <div class="qa-container">
-                <div class="qa-item">
-                    <div class="qa-question">¿Para quién es este programa?</div>
-                    <div class="qa-answer"><p>Es para coaches, consultores, freelancers y proveedores de servicios que quieran dejar de depender del "boca a boca" y construir un sistema predecible para atraer clientes de alto valor.</p></div>
-                </div>
-                <div class="qa-item">
-                    <div class="qa-question">¿Necesito experiencia previa en marketing o IA?</div>
-                    <div class="qa-answer"><p>No. El Método JL está diseñado para llevarte desde cero. Te enseñaré los fundamentos y te guiaré paso a paso para que puedas implementar todo, incluso si nunca has usado una herramienta de IA.</p></div>
-                </div>
-                <div class="qa-item">
-                    <div class="qa-question">¿Cuánto tiempo necesito dedicarle?</div>
-                    <div class="qa-answer"><p>Con dedicarle de 3 a 5 horas por semana, podrás avanzar a buen ritmo y empezar a implementar las estrategias. Lo más importante es la consistencia.</p></div>
-                </div>
-                <div class="qa-item">
-                    <div class="qa-question">¿Cuándo veré resultados?</div>
-                    <div class="qa-answer"><p>Si sigues el plan de acción, puedes tener tu sistema montado y empezar a generar tus primeros prospectos cualificados en menos de 30 días. Algunos alumnos lo logran incluso antes.</p></div>
-                </div>
-                 <div class="qa-item">
-                    <div class="qa-question">¿Cómo accedo al programa?</div>
-                    <div class="qa-answer"><p>Una vez realizado el pago, recibirás un correo electrónico con tus datos de acceso a la plataforma de estudio, donde encontrarás todos los módulos, materiales y bonos.</p></div>
-                </div>
-                 <div class="qa-item">
-                    <div class="qa-question">¿Tengo garantía?</div>
-                    <div class="qa-answer"><p>¡Sí! Tienes una garantía de satisfacción de 7 días. Si aplicas el método y no obtienes resultados, te devolvemos tu dinero. El riesgo es cero para ti.</p></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section-dark" id="escasez">
-        <div class="container">
-            <div class="scarcity-box">
-                <h2 class="section-title">La Decisión es Tuya...</h2>
-                <p>Puedes seguir como hasta ahora, luchando por conseguir clientes de forma inconsistente, o puedes tomar acción hoy y construir el sistema que te dará la libertad y facturación que deseas.</p>
-                <p><strong>Esta oferta con todos los bonos es por tiempo limitado. Los cupos son reducidos para poder dar el mejor soporte.</strong></p>
-                <a href="https://pay.hotmart.com/R100049489D?checkoutMode=10&bid=1751026977242" target="_blank" class="cta-button" style="font-size: 1.5rem; padding: 25px 50px;">🚀 SÍ, QUIERO TRANSFORMAR MIS VENTAS CON IA</a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-brand">
-                <h3>Jorge Leyva</h3>
-                <p>Creador del Método JL</p>
-            </div>
-             <div class="footer-socials">
-                <a href="https://twitter.com/SoyJorgeLeyva" target="_blank" title="Twitter de Jorge Leyva">T</a>
-                <a href="https://www.instagram.com/SoyJorgeLeyva" target="_blank" title="Instagram de Jorge Leyva">I</a>
-                <a href="https://www.linkedin.com/in/SoyJorgeLeyva" target="_blank" title="LinkedIn de Jorge Leyva">L</a>
-            </div>
-            <div class="footer-copyright">
-                <p>&copy; 2025 Método JL por Jorge Leyva. Todos los derechos reservados.</p>
-                <p>Este sitio no es parte del sitio web de Facebook o Facebook Inc. Además, este sitio NO está respaldado por Facebook de ninguna manera. FACEBOOK es una marca registrada de FACEBOOK, Inc.</p>
-            </div>
+    <!-- Footer -->
+    <footer class="bg-brand-dark py-8 border-t border-white/5 text-center text-gray-500 text-sm relative z-10">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2026 Jorge Leyva - Asesor Educativo.</p>
         </div>
     </footer>
 
-    <div class="live-notifications" id="liveNotifications"></div>
-    
+    <!-- ==========================================
+         MODAL POPUP DE VIDEO
+         ========================================== -->
+    <div id="videoModal" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-black/90 backdrop-blur-md transition-opacity duration-300 opacity-0">
+        
+        <!-- Botón cerrar (arriba a la derecha) -->
+        <button onclick="closeVideoModal()" class="absolute top-6 right-6 md:top-10 md:right-10 text-gray-400 hover:text-white transition-colors bg-white/10 hover:bg-white/20 p-2 rounded-full z-10">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+
+        <!-- Contenedor del Iframe -->
+        <div id="videoModalContent" class="relative w-full max-w-5xl mx-4 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(37,99,235,0.4)] border border-brand-primary/30 scale-95 transition-transform duration-300">
+            <div class="relative pt-[56.25%] w-full bg-black">
+                <!-- El Iframe apuntando al drive -->
+                <iframe id="videoIframe" class="absolute inset-0 w-full h-full border-0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+        </div>
+        
+        <p class="text-white mt-6 font-semibold tracking-wide animate-pulse">Cargando la presentación exclusiva...</p>
+    </div>
+
+    <!-- Contenedor de Notificaciones en Vivo -->
+    <div id="liveNotifications"></div>
+
+    <!-- Scripts -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // --- INICIALIZACIÓN DE EFECTOS ---
-            const typewriterPhrases = [ { text: "Atrae clientes a diario." }, { text: "Vende más con IA." }, { text: "Crece en menos de 30 días." } ];
-            initDynamicTypewriter('typewriter-text', typewriterPhrases);
+        lucide.createIcons();
 
-            const qaItems = document.querySelectorAll('.qa-item');
-            qaItems.forEach(item => {
-                const question = item.querySelector('.qa-question');
-                question.addEventListener('click', () => {
-                    const answer = item.querySelector('.qa-answer');
-                    const isActive = item.classList.contains('active');
-                    qaItems.forEach(i => {
-                        if (i !== item) {
-                           i.classList.remove('active');
-                           i.querySelector('.qa-answer').style.maxHeight = '0';
-                        }
-                    });
-                    if (!isActive) {
-                        item.classList.add('active');
-                        answer.style.maxHeight = answer.scrollHeight + 'px';
-                    } else {
-                        item.classList.remove('active');
-                        answer.style.maxHeight = '0';
-                    }
-                });
-            });
-            startLiveNotifications();
-        });
+        // ----------------------------------------------------
+        // Lógica de Texto Dinámico
+        // ----------------------------------------------------
+        const texts = [
+            "a tu propio ritmo", 
+            "100% en línea", 
+            "con Validez Oficial", 
+            "con beca parcial"
+        ];
+        let textIndex = 0;
+        const dynamicTextElement = document.getElementById('dynamicText');
 
-        function initDynamicTypewriter(elementId, phrases) {
-            const typewriterElement = document.getElementById(elementId);
-            if (!typewriterElement) return;
-            let phraseIndex = 0, charIndex = 0, isDeleting = false;
-            const typingSpeed = 100, deletingSpeed = 60, delayBetweenPhrases = 2000;
-            function type() {
-                const currentPhrase = phrases[phraseIndex].text;
-                let displayText = isDeleting ? currentPhrase.substring(0, charIndex - 1) : currentPhrase.substring(0, charIndex + 1);
-                typewriterElement.textContent = displayText;
-                charIndex = isDeleting ? charIndex - 1 : charIndex + 1;
-                if (!isDeleting && charIndex === currentPhrase.length) {
-                    isDeleting = true;
-                    setTimeout(type, delayBetweenPhrases);
-                } else if (isDeleting && charIndex === 0) {
-                    isDeleting = false;
-                    phraseIndex = (phraseIndex + 1) % phrases.length;
-                    setTimeout(type, typingSpeed);
-                } else {
-                    setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
-                }
-            }
-            type();
+        setInterval(() => {
+            textIndex = (textIndex + 1) % texts.length;
+            dynamicTextElement.style.opacity = 0;
+            setTimeout(() => {
+                dynamicTextElement.textContent = texts[textIndex];
+                dynamicTextElement.style.opacity = 1;
+            }, 300);
+        }, 3000);
+        dynamicTextElement.style.transition = "opacity 0.3s ease-in-out";
+
+        // ----------------------------------------------------
+        // Lógica del Modal de Video
+        // ----------------------------------------------------
+        const videoModal = document.getElementById('videoModal');
+        const videoIframe = document.getElementById('videoIframe');
+        const videoModalContent = document.getElementById('videoModalContent');
+        const videoUrl = "https://drive.google.com/file/d/1OAAQx0UGNwpFfF7lufOvtT9AM9hSgPmg/preview";
+
+        function openVideoModal() {
+            videoIframe.src = videoUrl;
+            videoIframe.allow="autoplay;"
+            videoIframe.sandbox="allow-scripts allow-same-origin allow-presentation"
+            videoIframe.oncontextmenu="return false;"
+            videoModal.classList.remove('hidden');
+            videoModal.style.display = 'flex'; // Usamos flex para centrar
+            
+            // Permitir que el navegador registre el cambio de display antes de animar
+            setTimeout(() => {
+                videoModal.classList.remove('opacity-0');
+                videoModalContent.classList.remove('scale-95');
+                videoModalContent.classList.add('scale-100');
+            }, 10);
         }
 
-        function startLiveNotifications() {
-            const notificationContainer = document.getElementById('liveNotifications');
-            if (!notificationContainer) return;
-            setTimeout(createNotification, 15000);
-            setInterval(createNotification, 45000);
+        function closeVideoModal() {
+            videoModal.classList.add('opacity-0');
+            videoModalContent.classList.remove('scale-100');
+            videoModalContent.classList.add('scale-95');
+            
+            setTimeout(() => {
+                videoModal.classList.add('hidden');
+                videoModal.style.display = 'none';
+                videoIframe.src = ""; // Detener el video limpiando la fuente
+            }, 300); // Tiempo que dura la transición
+        }
+
+        // Cerrar al hacer clic fuera del video
+        videoModal.addEventListener('click', function(e) {
+            if (e.target === videoModal) {
+                closeVideoModal();
+            }
+        });
+
+        // ----------------------------------------------------
+        // Lógica de Notificaciones en Vivo (Derecha, Blancas, 7s delay)
+        // ----------------------------------------------------
+        window.onload = function() {
+            // Primera notificación a los 5 segundos
+            setTimeout(createNotification, 5000); 
+            // Bucle infinito cada 7 segundos (7000 ms)
+            setInterval(createNotification, 7000); 
         }
 
         function createNotification() {
             const container = document.getElementById('liveNotifications');
+            const audio = document.getElementById('notificationSound');
             if (!container) return;
-            const names = ['Jorge','Lucero','Marlene','Anali','Xiomara','Fernanda','María', 'Ana', 'Luis', 'Carmen', 'José', 'Elena', 'Carlos', 'Sofía'];
-            const cities = ['Lima, Perú', 'Bogotá, Colombia', 'Santiago, Chile', 'Madrid, España', 'Miami, USA', 'Ciudad de México'];
+            
+            // Reproducir sonido si es posible
+            if(audio) {
+                // El catch evita errores en consola si el usuario no ha hecho clic en la web aún
+                audio.play().catch(e => console.log('Esperando interacción para reproducir sonido'));
+            }
+            
+            const names = ['Carlos','Lucía','Miguel','Andrea','Javier','Fernanda','Roberto', 'Ana', 'Luis', 'Carmen'];
+            const countries = ['Perú', 'Colombia', 'Chile', 'México', 'Ecuador', 'España'];
+            const actions = ['acaba de verificar su beca', 'agendó su asesoría educativa', 'inició su proceso de inscripción'];
+            
             const randomName = names[Math.floor(Math.random() * names.length)];
-            const randomCity = cities[Math.floor(Math.random() * cities.length)];
+            const randomCountry = countries[Math.floor(Math.random() * countries.length)];
+            const randomAction = actions[Math.floor(Math.random() * actions.length)];
+            
             const notification = document.createElement('div');
             notification.className = 'notification';
-            notification.innerHTML = `<span class="notification-icon">🔥</span><div class="notification-content"><span class="notification-name">${randomName}</span> de ${randomCity} acaba de unirse al Método JL.</div>`;
+            
+            // Diseño en blanco, texto oscuro
+            notification.innerHTML = `
+                <div class="bg-brand-primary/10 p-2 rounded-full">
+                    <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                </div>
+                <div class="flex flex-col text-left">
+                    <span class="font-bold text-gray-800">${randomName} de ${randomCountry}</span>
+                    <span class="text-gray-600 text-sm">${randomAction}</span>
+                </div>
+            `;
+            
             container.appendChild(notification);
+            
+            // Eliminar la notificación después de 5.5 segundos para que haya respiro antes de los 7s
             setTimeout(() => {
                 notification.classList.add('fade-out');
-                setTimeout(() => { if (notification.parentNode) { notification.parentNode.removeChild(notification); } }, 500);
-            }, 7500);
+                setTimeout(() => { 
+                    if (notification.parentNode) { 
+                        notification.parentNode.removeChild(notification); 
+                    } 
+                }, 500); // tiempo de la animacion de salida
+            }, 5500);
         }
     </script>
 </body>
